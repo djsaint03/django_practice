@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('description', models.TextField()),
                 ('sex', models.CharField(blank=True, choices=[('M', 'Male'), ('F', 'Female')], max_length=1)),
                 ('age', models.IntegerField(null=True)),
-                ('vaccination', models.ManyToManyField(blank=True, to='adoptions.Vaccine')),
+                ('vaccinations', models.ManyToManyField(blank=True, to='adoptions.Vaccine')),
             ],
         ),
     ]

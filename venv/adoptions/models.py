@@ -14,3 +14,12 @@ class Pet(models.Model):
 
 class Vaccine(models.Model):
     name = models.CharField(max_length=50)
+
+
+class Humans(models.Model):
+    sex = [("M", "Male"),("F", "Female"),("A","Agender"),("B","Bigender"),("P","Polygender"),("G","Genderfliud"),("GQ","Genderqueer"),("N","Non-binary")]
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    email = models.EmailField(max_length=50, blank=True)
+    gender= models.CharField(max_length=2,choices=sex)
+    address = models.CharField(max_length=100)
