@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+    {% block content %}
+        <h3>Animals available for adoption</h3>
+        <!---bascially this is a extension inheritance from base.html--->
+        <!---more stuff here--->
+{% endblock content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<p>home</p>
+
+
+
+</body>
+</html>

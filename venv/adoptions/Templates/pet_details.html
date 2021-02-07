@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pets details</title>
+</head>
+<body>
+ <p>Pets details </p>
+    <h1>This is {{pet.name}} he/she is a {{pet.breed}}</h1>
+    {% for pet in pets %}
+        <li>{{pet.name}}</li>
+    {% endfor %}
+</body>
+</html>
