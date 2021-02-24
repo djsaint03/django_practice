@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +10,41 @@
 <body>
  <p>Pets details </p>
     <h1>This is {{pet.name}} he/she is a {{pet.breed}}</h1>
+    <h3>{{pet.name|capfirst }}</h3>
+
+ <p>{{pet.species}}</p>
+    {% if pet.breed %}
+        <p>Breed: {{pet.breed}}</p>
+    {% endif %}
+
+    {% if pet.age %}
+        <p>Age: {{pet.age}} years old</p>
+    {% endif %}
+
+    {% if pet.sex %}
+        <p>Sex: {{pet.sex}}</p>
+    {% endif %}
+
+    {% if pet.vaccinations.all %}
+        <p>Vaccinations for:</p>
+        <ul>
+            {% for vaccination in pet.vaccinations.all %}
+                <li>{{ vaccination.name }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
     {% for pet in pets %}
         <li>{{pet.name}}</li>
     {% endfor %}
+<p>Submitted by: {{ pet.submitter }}</p>
+<p>Submitted on: {{ pet.submitted_date|date:"M D Y" }}</p>
+<P>{{ pet.description }}</P>
+
+     <div>
+         <a class= " btn btn-primary" href = "{% url 'home' %}"> Back </a>
+     </div>
 </body>
 </html>
+{% endblock content %}
+
